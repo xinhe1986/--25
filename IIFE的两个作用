@@ -1,0 +1,26 @@
+ // 为变量赋值;IIFE 作用1：
+        var age = "19";
+        var sex = "female";
+        var title = (function() {
+            if (age < 18) {
+                return "little guy";
+            } else {
+                if (sex == "male") {
+                    return "gentaleman";
+                } else {
+                    return "lady";
+                }
+            }
+        })();
+        alert(title);
+        // IIFE作用2
+        arr = [];
+        for (i = 0; i<5; i++) {
+            (function (i) {
+                arr.push(function() {
+                    alert(i);
+                })
+            })(i);
+        };
+        arr[2]();
+        arr[3]();
